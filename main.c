@@ -44,11 +44,11 @@ void func_timeavg(double (*operation)(long long int, double*, double*), long lon
 
     *avgtime = sum_times / loops; // Calculate average time
     printf("Average time taken for 30 runs: %lf ms\n", *avgtime);
-    printf("Dot product of A and B is: %.2lf\n", *sdot);
+    printf("Dot product of A and B is: %lf\n", *sdot);
 }
 
 int main() {
-    long long int ARR_SIZE = 1<<20;
+    long long int ARR_SIZE = 1<<26;
     double* a = (double*)malloc(ARR_SIZE * sizeof(double));
     double* b = (double*)malloc(ARR_SIZE * sizeof(double));
 
@@ -83,10 +83,10 @@ int main() {
     func_timeavg(dotproduct_ymm, ARR_SIZE, a, b, loops, &sdot[3], &avgtimes[3]);
 
     printf("\nDot product summary:\n");
-    printf("  C function answer = %.2lf | Average time taken: %lf ms\n", sdot[0], avgtimes[0]);
-    printf("x86 function answer = %.2lf | Average time taken: %lf ms\n", sdot[1], avgtimes[1]);
-    printf("xmm function answer = %.2lf | Average time taken: %lf ms\n", sdot[2], avgtimes[2]);
-    printf("ymm function answer = %.2lf | Average time taken: %lf ms\n", sdot[3], avgtimes[3]);
+    printf("  C function answer = %lf | Average time taken: %lf ms\n", sdot[0], avgtimes[0]);
+    printf("x86 function answer = %lf | Average time taken: %lf ms\n", sdot[1], avgtimes[1]);
+    printf("xmm function answer = %lf | Average time taken: %lf ms\n", sdot[2], avgtimes[2]);
+    printf("ymm function answer = %lf | Average time taken: %lf ms\n", sdot[3], avgtimes[3]);
 
     return 0;
 }
