@@ -9,7 +9,7 @@ extern double dotproduct_x86(long long int n, double* a, double* b);
 // xmm Function to calculate the dot product of two vectors
 extern double dotproduct_xmm(long long int n, double* a, double* b);
 
-// xmm Function to calculate the dot product of two vectors
+// ymm Function to calculate the dot product of two vectors
 extern double dotproduct_ymm(long long int n, double* a, double* b);
 
 // C Function to calculate the dot product of two vectors
