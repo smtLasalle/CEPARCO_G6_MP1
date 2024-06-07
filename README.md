@@ -2,17 +2,29 @@
 ### S11 Group 6
 ### Javier, Juan Diego V. | Kho, John Zechariah S. | Tumalad, Shawne Michael Q.
 
-#### [Debug version at n = 2^20]
+## Program
+This program computes the dot product by iterating through each element of the two input arrays, multiplying corresponding elements together, and summing up all the products.
+<br><br>The function is made in 4 different versions:
+* a C function
+* an x86 function
+* an xmm function
+* a ymm function
+
+## Results and Analysis
+### Array size 2^20
+#### Debug
 ![Alt text](README/debug%202^20.png)
-#### [Debug version at n = 2^26]
-![Alt text](README/debug%202^26.png)
-#### [Debug version at n = 2^28]
-![Alt text](README/debug%202^28.png)
-#### [Release version at n = 2^20]
+#### Release
 ![Alt text](README/release%202^20.png)
-#### [Release version at n = 2^26]
+### Array size 2^26
+#### Debug
+![Alt text](README/debug%202^26.png)
+#### Release
 ![Alt text](README/release%202^26.png)
-#### [Release version at n = 2^28]
+### Array size 2^28
+#### Debug
+![Alt text](README/debug%202^28.png)
+#### Release
 ![Alt text](README/release%202^28.png)
 
 
