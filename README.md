@@ -2,9 +2,19 @@
 ### S11 Group 6
 ### Javier, Juan Diego V. | Kho, John Zechariah S. | Tumalad, Shawne Michael Q.
 
+#### [Debug version at n = 2^20]
+![Alt text](README/debug%202^20.png)
+#### [Debug version at n = 2^26]
+![Alt text](README/debug%202^26.png)
+#### [Debug version at n = 2^28]
+![Alt text](README/debug%202^28.png)
+#### [Release version at n = 2^20]
+![Alt text](README/release%202^20.png)
+#### [Release version at n = 2^26]
+![Alt text](README/release%202^26.png)
+#### [Release version at n = 2^28]
+![Alt text](README/release%202^28.png)
 
-![Alt text](README/debug 2^20.png)
-![Alt text](README/release 2^20.png)
 
 ## C Program
 This function efficiently computes the dot product by iterating through each element of the two input arrays, multiplying corresponding elements together, and summing up all the products. The dot product is a fundamental operation in various scientific and engineering computations, especially in vector mathematics and linear algebra. The function uses straightforward indexing and arithmetic operations, making it clear and easy to understand.
