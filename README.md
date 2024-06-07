@@ -26,6 +26,9 @@ Each function was run 30 times and the time it took for each run is averaged.
 | - | - | - | - | - |
 | Debug | 4.420053 | 3.485913 | 1.549047 | 1.377023 |
 | Release | 2.688383 | 2.496110 | 2.178513 | 1.905723 |
+
+EXPLAIN HERE
+
 ### Array size 2^26
 #### Debug
 ![Alt text](README/debug%202^26.png)
@@ -36,6 +39,9 @@ Each function was run 30 times and the time it took for each run is averaged.
 | - | - | - | - | - |
 | Debug | 201.624820 | 136.3880q53 | 89.870213 | 77.702683 |
 | Release | 88.977820 | 119.052030 | 84.965710 | 70.788297 |
+
+EXPLAIN HERE
+
 ### Array size 2^28
 #### Debug
 ![Alt text](README/debug%202^28.png)
