@@ -47,6 +47,15 @@ Each function was run 30 times and the time it took for each run is averaged.
 | Debug | 702.918997 | 493.658220 | 314.526787 | 282.809700 |
 | Release | 419.571883 | 489.864893 | 333.865140 | 280.233303 |
 
+## Result analysis and discussion
+Analyzing the runtime data across different implementations (C, x86, XMM, YMM) and compilation modes (Debug and Release) reveals that SIMD implementations using YMM registers consistently offer the lowest runtimes, underscoring the performance superiority of wider registers that can process more data per cycle. Transitioning from Debug to Release mode significantly enhances performance across all methods, with the most notable improvements seen in the C implementation, suggesting that high-level C benefits extensively from compiler optimizations like inlining and loop unrolling. Although YMM maintains a performance lead in Release mode, the gaps between YMM, XMM, and x86 narrow, indicating that compiler optimizations help optimize x86 and XMM implementations closer to YMM's efficiency. Moreover, YMM shows minimal performance variability between Debug and Release modes, highlighting its performance reliance on inherent hardware capabilities rather than compiler enhancements, thus demonstrating the importance of choosing appropriate programming and optimization strategies based on specific performance needs and environmental contexts.
+
+
+
+
+
+
+
 ## x86-64 Program
 This x86 assembly code snippet calculates the dot product of two arrays of double-precision floating-point numbers using SIMD instructions and XMM registers. The function initializes by zeroing out the xmm0 register to store the cumulative sum of products and clears the rax register for use as a loop counter. During each iteration of the loop, it loads corresponding elements from the arrays (addressed by rdx and r8) into xmm1 and xmm2. These elements are then multiplied together (mulsd), and the result is added to the cumulative sum in xmm0 (addsd). The loop continues until all elements are processed, incrementing rax after each iteration to advance the array index. The function concludes by zeroing rax for clean state management and returns, with the final dot product result stored in xmm0.
 
