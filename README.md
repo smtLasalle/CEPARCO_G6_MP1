@@ -21,16 +21,31 @@ Each function was run 30 times and the time it took for each run is averaged.
 ![Alt text](README/debug%202^20.png)
 #### Release
 ![Alt text](README/release%202^20.png)
+#### Comparison table
+| Average Runtime in ms | C | x86 | XMM | YMM |
+| - | - | - | - | - |
+| Debug | 4.420053 | 3.485913 | 1.549047 | 1.377023 |
+| Release | 2.688383 | 2.496110 | 2.178513 | 1.905723 |
 ### Array size 2^26
 #### Debug
 ![Alt text](README/debug%202^26.png)
 #### Release
 ![Alt text](README/release%202^26.png)
+#### Comparison table
+| Average Runtime in ms | C | x86 | XMM | YMM |
+| - | - | - | - | - |
+| Debug | 201.624820 | 136.3880q53 | 89.870213 | 77.702683 |
+| Release | 88.977820 | 119.052030 | 84.965710 | 70.788297 |
 ### Array size 2^28
 #### Debug
 ![Alt text](README/debug%202^28.png)
 #### Release
 ![Alt text](README/release%202^28.png)
+#### Comparison table
+| Average Runtime in ms | C | x86 | XMM | YMM |
+| - | - | - | - | - |
+| Debug | 702.918997 | 493.658220 | 314.526787 | 282.809700 |
+| Release | 419.571883 | 489.864893 | 333.865140 | 280.233303 |
 
 ## x86-64 Program
 This x86 assembly code snippet calculates the dot product of two arrays of double-precision floating-point numbers using SIMD instructions and XMM registers. The function initializes by zeroing out the xmm0 register to store the cumulative sum of products and clears the rax register for use as a loop counter. During each iteration of the loop, it loads corresponding elements from the arrays (addressed by rdx and r8) into xmm1 and xmm2. These elements are then multiplied together (mulsd), and the result is added to the cumulative sum in xmm0 (addsd). The loop continues until all elements are processed, incrementing rax after each iteration to advance the array index. The function concludes by zeroing rax for clean state management and returns, with the final dot product result stored in xmm0.
