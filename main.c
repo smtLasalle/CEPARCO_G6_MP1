@@ -100,31 +100,24 @@ int main() {
 
     // Boundary element test
     printf("\nBoundary element test:\n");
-    printf("Initialize new arrays with size of 8:\n");
+    
+    printf("\nArr size - 1\n");
+    printf("Not considering the last 3 values in the arr would make xmm and ymm have 1 extra element\n");
+    printf("  C function answer = %lf\n", dotproduct_C(ARR_SIZE - 3, a, b));
+    printf("xmm function answer = %lf\n", dotproduct_xmm(ARR_SIZE - 3, a, b));
+    printf("ymm function answer = %lf\n", dotproduct_ymm(ARR_SIZE - 3, a, b));
+    
+    printf("\nArr size - 2\n");
+    printf("Not considering the last 2 values in the arr would make ymm have 2 extra elements\n");
+    printf("  C function answer = %lf\n", dotproduct_C(ARR_SIZE - 2, a, b));
+    printf("xmm function answer = %lf\n", dotproduct_xmm(ARR_SIZE - 2, a, b));
+    printf("ymm function answer = %lf\n", dotproduct_ymm(ARR_SIZE - 2, a, b));
 
-    double c[8], d[8];
-    for (int i = 0; i < 8; i++) {
-        c[i] = d[i] = i + 1;
-        printf("c[%d] = %lf, d[%d] = %lf\n", i, c[i], i, d[i]);
-    }
-
-    printf("\nArr size 5:\n");
-    printf("xmm and ymm would have 1 extra element\n");
-    printf("  C function answer = %lf\n", dotproduct_C(5, c, d));
-    printf("xmm function answer = %lf\n", dotproduct_xmm(5, c, d));
-    printf("ymm function answer = %lf\n", dotproduct_ymm(5, c, d));
-
-    printf("\nArr size 6:\n");
-    printf("ymm would have 2 extra elements\n");
-    printf("  C function answer = %lf\n", dotproduct_C(6, c, d));
-    printf("xmm function answer = %lf\n", dotproduct_xmm(6, c, d));
-    printf("ymm function answer = %lf\n", dotproduct_ymm(6, c, d));
-
-    printf("\nArr size 7:\n");
-    printf("xmm would have 1 extra element while ymm would have 3 extra elements\n");
-    printf("  C function answer = %lf\n", dotproduct_C(7, c, d));
-    printf("xmm function answer = %lf\n", dotproduct_xmm(7, c, d));
-    printf("ymm function answer = %lf\n", dotproduct_ymm(7, c, d));
+    printf("\nArr size - 3\n");
+    printf("Not considering the last value in the arr would make xmm have 1 extra element while ymm would have 3 extra elements\n");
+    printf("  C function answer = %lf\n", dotproduct_C(ARR_SIZE - 1, a, b));
+    printf("xmm function answer = %lf\n", dotproduct_xmm(ARR_SIZE - 1, a, b));
+    printf("ymm function answer = %lf\n", dotproduct_ymm(ARR_SIZE - 1, a, b));
 
     return 0;
 }
