@@ -10,6 +10,11 @@ This program computes the dot product by iterating through each element of the t
 * an xmm function
 * a ymm function
 
+Each function was run 30 times and the time it took for each run is averaged.
+
+![Alt text](README/C_output.png)
+
+
 ## Results and Analysis
 ### Array size 2^20
 #### Debug
