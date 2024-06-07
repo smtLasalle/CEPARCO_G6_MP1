@@ -28,7 +28,7 @@ The image showing the C function averaging process is identical to the other 3 f
 | Debug | 4.420053 | 3.485913 | 1.549047 | 1.377023 |
 | Release | 2.688383 | 2.496110 | 2.178513 | 1.905723 |
 
-EXPLAIN HERE
+For an array size of 2^20, the YMM implementation consistently shows the best performance in both Debug and Release modes, closely followed by XMM, x86, and then C. The speedup from using YMM over C is notable, with YMM being approximately three times faster in Debug mode and faster in Release mode. The SIMD implementations clearly benefit from parallel data processing, reducing computational time significantly compared to scalar x86 and C implementations.
 
 ### Array size 2^26
 #### Debug
@@ -41,7 +41,7 @@ EXPLAIN HERE
 | Debug | 201.624820 | 136.3880q53 | 89.870213 | 77.702683 |
 | Release | 88.977820 | 119.052030 | 84.965710 | 70.788297 |
 
-EXPLAIN HERE
+For this larger array size, YMM maintains its lead in performance in both Debug and Release modes, followed by XMM, x86, and C. The runtime increases substantially for all implementations compared to the smaller array size, but the rate of increase is lower for YMM and XMM, highlighting their scalability and efficiency in handling larger data volumes.
 
 ### Array size 2^28
 #### Debug
@@ -53,6 +53,8 @@ EXPLAIN HERE
 | - | - | - | - | - |
 | Debug | 702.918997 | 493.658220 | 314.526787 | 282.809700 |
 | Release | 419.571883 | 489.864893 | 333.865140 | 280.233303 |
+
+With an even larger array size, the trend continues with YMM showing the best performance. However, it's notable that in Release mode, the performance of x86 and YMM are quite close, with x86 slightly outperforming XMM. This could indicate that for extremely large data sets, the overhead of managing SIMD operations might reduce some of the performance advantages of YMM and XMM.
 
 ## Result analysis and discussion
 Analyzing the runtime data across different implementations (C, x86, XMM, YMM) and compilation modes (Debug and Release) reveals that SIMD implementations using YMM registers consistently offer the lowest runtimes, underscoring the performance superiority of wider registers that can process more data per cycle. Transitioning from Debug to Release mode significantly enhances performance across all methods, with the most notable improvements seen in the C implementation, suggesting that high-level C benefits extensively from compiler optimizations like inlining and loop unrolling. Although YMM maintains a performance lead in Release mode, the gaps between YMM, XMM, and x86 narrow, indicating that compiler optimizations help optimize x86 and XMM implementations closer to YMM's efficiency. Moreover, YMM shows minimal performance variability between Debug and Release modes, highlighting its performance reliance on inherent hardware capabilities rather than compiler enhancements, thus demonstrating the importance of choosing appropriate programming and optimization strategies based on specific performance needs and environmental contexts.
