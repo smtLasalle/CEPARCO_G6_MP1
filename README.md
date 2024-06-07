@@ -27,10 +27,6 @@ This program computes the dot product by iterating through each element of the t
 #### Release
 ![Alt text](README/release%202^28.png)
 
-
-## C Program
-This function efficiently computes the dot product by iterating through each element of the two input arrays, multiplying corresponding elements together, and summing up all the products. The dot product is a fundamental operation in various scientific and engineering computations, especially in vector mathematics and linear algebra. The function uses straightforward indexing and arithmetic operations, making it clear and easy to understand.
-
 ## x86-64 Program
 This x86 assembly code snippet calculates the dot product of two arrays of double-precision floating-point numbers using SIMD instructions and XMM registers. The function initializes by zeroing out the xmm0 register to store the cumulative sum of products and clears the rax register for use as a loop counter. During each iteration of the loop, it loads corresponding elements from the arrays (addressed by rdx and r8) into xmm1 and xmm2. These elements are then multiplied together (mulsd), and the result is added to the cumulative sum in xmm0 (addsd). The loop continues until all elements are processed, incrementing rax after each iteration to advance the array index. The function concludes by zeroing rax for clean state management and returns, with the final dot product result stored in xmm0.
 
