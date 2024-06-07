@@ -40,11 +40,11 @@ dotproduct_xmm:
     xorpd xmm0, xmm0
      
 dotproduct2:  
-    movdqu xmm1, [rdx + rax * 8]    
-    movdqu xmm2, [r8 + rax * 8] 
+    movapd xmm1, [rdx + rax * 8]    
+    movapd xmm2, [r8 + rax * 8] 
     mulpd xmm1, xmm2
     haddpd xmm1, xmm1
-    vaddpd xmm0, xmm1
+    addpd xmm0, xmm1
     
     add rax, 2
     loop dotproduct2
@@ -54,10 +54,10 @@ xbd1:
     jz end2
     
     ;perform 1 more dot product process for last element in odd sized arr
-    movdqu xmm1, [rdx + rax * 8]    
-    movdqu xmm2, [r8 + rax * 8] 
+    movapd xmm1, [rdx + rax * 8]    
+    movapd xmm2, [r8 + rax * 8] 
     mulpd xmm1, xmm2
-    vaddpd xmm0, xmm1      
+    addpd xmm0, xmm1      
     
 end2:
     xor rax,rax
@@ -91,10 +91,10 @@ ybd2:
     cmp r12, 2 ;checks if there are 2 or more boundary elements
     jnge ybd1
     
-    movdqu xmm1, [rdx + rax * 8]    
-    movdqu xmm2, [r8 + rax * 8] 
-    mulpd xmm1, xmm2
-    haddpd xmm1, xmm1
+    vmovdqu xmm1, [rdx + rax * 8]    
+    vmovdqu xmm2, [r8 + rax * 8] 
+    vmulpd xmm1, xmm2
+    vhaddpd xmm1, xmm1
     vaddpd xmm0, xmm1   
     
     add rax, 2     
@@ -104,9 +104,9 @@ ybd1:
     cmp r12, 1 ;checks if there is 1 boundary element left
     jl end3
     
-    movdqu xmm1, [rdx + rax * 8]    
-    movdqu xmm2, [r8 + rax * 8] 
-    mulpd xmm1, xmm2
+    vmovdqu xmm1, [rdx + rax * 8]    
+    vmovdqu xmm2, [r8 + rax * 8] 
+    vmulpd xmm1, xmm2
     vaddpd xmm0, xmm1
 
 end3:
