@@ -32,7 +32,7 @@ For an array size of 2^20, the YMM implementation consistently shows the best pe
 
 It is also shown that there is a minor discrepancy in the decimals from the xmm and ymm functions. The different decimal places of the dot product results between XMM and YMM can be ascribed to the rounding behaviors and precision of IEEE-754 floating-point arithmetic. When compared to XMM, the wider YMM registers process more data concurrently, which can change the way rounding errors accumulate and produce slightly different outcomes. This would be more present in higher array sizes
 
-Despite the decimal discrepancies, the percent error shows 0% as the difference is so marginal it is considered 0. Using the formula in a scientific calculator gave us a value that 10^-xx where xx was around 8 to 11 depending on the value. This result is very negligible.
+Despite the decimal discrepancies, the percent error shows 0% as the difference is so marginal it is considered 0. Using the formula in a scientific calculator gave us a value that 10^-xx where xx was around 8 to 11 depending on the value. This result is negligible.
 
 The boundary handling test assumes that the array size is a multiple of 2 which is always the case with the given array sizes in the MP specifications. Subtracting values 1 to 3 from the array size and using that value in the dot product functions allows them to perform the dot product with less elements despite the array having more, thus simulating a boundary handling problem.
 
