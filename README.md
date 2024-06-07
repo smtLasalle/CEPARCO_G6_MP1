@@ -1,4 +1,10 @@
-# CEPARCO_MP1
+# CEPARCO MP1
+### S11 Group 6
+### Javier, Juan Diego V. | Kho, John Zechariah S. | Tumalad, Shawne Michael Q.
+
+
+![Alt text](README/debug 2^20.png)
+![Alt text](README/release 2^20.png)
 
 ## C Program
 This function efficiently computes the dot product by iterating through each element of the two input arrays, multiplying corresponding elements together, and summing up all the products. The dot product is a fundamental operation in various scientific and engineering computations, especially in vector mathematics and linear algebra. The function uses straightforward indexing and arithmetic operations, making it clear and easy to understand.
